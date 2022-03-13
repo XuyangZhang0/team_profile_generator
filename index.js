@@ -123,13 +123,13 @@ function employeeLoop() {
             }
 
             engineerEl = generateEngineerElement(engineers);
-            console.log(engineerEl);
+            // console.log(engineerEl);
             internEl = generateInternElement(interns);
-            console.log(internEl);
+            // console.log(internEl);
             html = generateHtml(managerEl, engineerEl, internEl);
 
             fs.writeFile('index.html', html, (err) =>
-                err ? console.error(err) : console.log('Success!')
+                err ? console.error(err) : console.log('Success! index.html file ready!')
             );
         })
 }

@@ -25,6 +25,7 @@ function generateEngineerElement (engineers) {
         <h3 class="card-title">${engineer.name}</h3>
         <h4 class="card-subtitle mb-2 text-muted">ID: ${engineer.id}</h4>
         <a href="mailto:${engineer.email}" class="btn btn-info">${engineer.email}</a>
+        <br>
         <a href="https://www.github.com/${engineer.github}" target="_blank" class="card-link">GitHub: ${engineer.github}</a>
     </div>
     </div>`
