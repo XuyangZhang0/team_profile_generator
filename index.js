@@ -57,11 +57,11 @@ const EmployeeQuestions = [
             {
                 type: 'input',
                 name: 'name',
-                message: 'Enter engineer\'s name.',
+                message: 'Enter name.',
             },
             {
                 type: 'input',
-                name: 'engineerid',
+                name: 'employeeid',
                 message: 'What is the Employee ID?',
             },
             {
@@ -92,7 +92,7 @@ function init() {
     inquirer
         .prompt(managerQuestions)
         .then((data) => {
-            console.log(data);
+            // console.log(data);
             const manager = new Manager(data.name, data.employeeid, data.email, data.officenumber);
             managerEl = generateManagerElement(manager);
             employeeLoop();
@@ -105,8 +105,8 @@ function employeeLoop() {
     inquirer
         .prompt(EmployeeQuestions)
         .then((data) => {
-            console.log(data); //Object
-            console.log(data.employees); //Array
+            // console.log(data); //Object
+            // console.log(data.employees); //Array
             const employees = data.employees;
             const engineers = [];
             const interns = [];
@@ -123,7 +123,9 @@ function employeeLoop() {
             }
 
             engineerEl = generateEngineerElement(engineers);
+            console.log(engineerEl);
             internEl = generateInternElement(interns);
+            console.log(internEl);
             html = generateHtml(managerEl, engineerEl, internEl);
 
             fs.writeFile('index.html', html, (err) =>
